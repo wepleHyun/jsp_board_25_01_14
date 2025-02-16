@@ -33,7 +33,17 @@ public class ArticleController {
 
 
     public void showList(Rq rq) {
-        List<Article> articles = articleList;
+        // articleList : 정렬되지 않은 1~5까지의 게시물 리스트
+        
+        // a1, a2 : article 객체
+        // Integer.compare 두 정수를 비교하는 메서드
+        // - a < b : 음수 반환
+        // - a == b : 0을 반환
+        // - a > b : 양수 반환
+        // Integer.compare(a2.getId(), a1.getId()) : 둘을 비교해서 내림차순 정렬
+        List<Article> articles = articleList.stream()
+                .sorted((a1, a2) -> Long.compare(a2.getId(), a1.getId()))
+                .toList(); //stream의 결과를 list로 변환
 
         rq.setAttr("articles", articles);
 
