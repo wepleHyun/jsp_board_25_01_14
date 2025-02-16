@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
 <!-- 스클립틀릿 문법 -->
 <%
@@ -18,5 +20,9 @@
 
 <!-- EL 문법 -->
 <h1>${a}단</h1>
-<div>${dan} * ${limit} = ${dan * limit}</div>
+
+<!-- JSTL 문법 -->
+<c:forEach var="i" begin="1" end="${limit}" step="1">
+    <div>${dan} * ${i} = ${dan * i}</div>
+</c:forEach>
 
