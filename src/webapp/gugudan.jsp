@@ -1,13 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="com.sbs.jsp.board.base.Rq"%>
 
 <!-- 스클립틀릿 문법 -->
 <%
     //int dan = 3;
     //int limit = 9;
 
-    int dan = Integer.parseInt(request.getParameter("dan"));
-    int limit = Integer.parseInt(request.getParameter("limit"));
+    //int dan = Integer.parseInt(request.getParameter("dan"));
+    //int limit = Integer.parseInt(request.getParameter("limit"));
     int a = 30;
+
+    Rq rq = new Rq(request, response);
+
+    int dan = rq.getIntParam("dan", 9);
+    int limit = rq.getIntParam("limit", 9);
 %>
 
 <div class="a"></div>
