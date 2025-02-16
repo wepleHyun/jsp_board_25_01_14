@@ -7,6 +7,7 @@
 
     int dan = Integer.parseInt(request.getParameter("dan"));
     int limit = Integer.parseInt(request.getParameter("limit"));
+    int a = 30;
 %>
 
 <div class="a"></div>
@@ -28,4 +29,13 @@
 <% for(int i = 1; i <= limit; i++) { %>
     <div><%=dan%> * <%=i%> = <%=dan * i%></div>
 <% } %>
+<!-- 방식1 -->
+<h1><% out.println(a); %></h1>
+<!-- 방식2 -->
+<h1><%=a%></h1>
+<!-- 방식3 -->
+<h1>30</h1>
 
+<%
+    System.out.println(a);
+%>
