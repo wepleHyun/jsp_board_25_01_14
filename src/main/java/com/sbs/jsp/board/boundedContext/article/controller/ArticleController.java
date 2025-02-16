@@ -51,4 +51,8 @@ public class ArticleController {
 
         //rq.print("<h1>게시물 리스트</h1>");
     }
+
+    public void showWrite(Rq rq) {
+        rq.view("usr/article/write");
+    }
 }
