@@ -1,6 +1,7 @@
 package com.sbs.jsp.board.servlet;
 
 import com.sbs.jsp.board.base.Rq;
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -27,6 +28,15 @@ public class GugudanServlet extends HttpServlet {
         int dan = rq.getIntParam("dan", 9);
         int limit = rq.getIntParam("limit", 9);
 
+        req.setAttribute("dan", dan); //key, value(object)
+        req.setAttribute("limit", limit); //key, value(object)
+        req.setAttribute("a", 10); //key, value(object)
+
+        //gugudan2.jsp 단에 데이터를 보냄
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/gugudan2.jsp");
+        requestDispatcher.forward(req, resp);
+
+        /*
         rq.print("""
                 <div class="a"></div>
                 
@@ -45,6 +55,7 @@ public class GugudanServlet extends HttpServlet {
         for (int i = 1; i <= limit; i++){
             resp.getWriter().append("<div>%d * %d = %d</div>\n".formatted(dan, i, dan * i));
         }
+        */
     }
 }
 

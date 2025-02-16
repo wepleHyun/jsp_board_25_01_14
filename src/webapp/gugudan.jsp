@@ -25,23 +25,26 @@
     }
 </style>
 
-<!--<h1>== <%=dan%>단 ==</h1>
+<h1>== <%=dan%>단 ==</h1>
 <div><%=dan%> * 1 = <%=dan * 1%></div>
 <div><%=dan%> * 2 = <%=dan * 2%></div>
 <div><%=dan%> * 3 = <%=dan * 3%></div>
 <div><%=dan%> * 4 = <%=dan * 4%></div>
-<div><%=dan%> * 5 = <%=dan * 5%></div>-->
+<div><%=dan%> * 5 = <%=dan * 5%></div>
 
 <% for(int i = 1; i <= limit; i++) { %>
     <div><%=dan%> * <%=i%> = <%=dan * i%></div>
 <% } %>
-<!-- 방식1 -->
+
+<!--
+!-- 방식1 --
 <h1><% out.println(a); %></h1>
-<!-- 방식2 -->
+!-- 방식2 --
 <h1><%=a%></h1>
-<!-- 방식3 -->
+!-- 방식3 --
 <h1>30</h1>
 
 <%
     System.out.println(a);
 %>
+-->
