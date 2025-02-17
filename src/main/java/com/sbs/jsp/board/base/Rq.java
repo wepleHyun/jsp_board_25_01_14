@@ -4,6 +4,7 @@ import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.PushBuilder;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -65,5 +66,21 @@ public class Rq {
         } catch (ServletException | IOException e) {
             throw  new RuntimeException(e);
         }
+    }
+
+    public  String getUrlPath() {
+        return  req.getRequestURI();
+    }
+
+    public String getMethod() {
+        return req.getMethod(); //GET, POST, PUT, DELETE
+    }
+
+    public String getParam(String paramName, String defaultValue) {
+        String value = req.getParameter((paramName));
+
+        if(value == null) return  defaultValue;
+
+        return value;
     }
 }
