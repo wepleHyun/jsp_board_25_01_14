@@ -26,16 +26,18 @@ public class DispatcherServlet  extends HttpServlet{
         String url = req.getRequestURI();
         //System.out.println(url);
 
+        //System.out.println(req.getRequestURI());
+
         switch (rq.getMethod()) {
             case "GET" -> {
-                switch (rq.getUrlPath()) {
+                switch (rq.getActionPath()) {
                     case "/usr/article/write" -> articleController.showWrite(rq);
                     case "/usr/article/list" -> articleController.showList(rq);
                     case "/usr/member/join" -> memberController.showJoin(rq);
                 }
             }
             case "POST" -> {
-                switch (rq.getUrlPath()) {
+                switch (rq.getActionPath()) {
                     case "/usr/article/write" -> articleController.doWrite(rq);
                 }
             }

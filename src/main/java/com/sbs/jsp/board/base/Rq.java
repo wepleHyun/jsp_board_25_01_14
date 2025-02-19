@@ -8,6 +8,7 @@ import jakarta.servlet.http.PushBuilder;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.util.Arrays;
 
 public class Rq {
     private final HttpServletRequest req;
@@ -68,8 +69,8 @@ public class Rq {
         }
     }
 
-    public  String getUrlPath() {
-        return  req.getRequestURI();
+    public String getUrlPath() {
+        return req.getRequestURI();
     }
 
     public String getMethod() {
@@ -82,5 +83,12 @@ public class Rq {
         if(value == null) return  defaultValue;
 
         return value;
+    }
+
+    public String getActionPath() {
+        String[] bits = req.getRequestURI().split("/");
+        System.out.println(Arrays.toString(bits));
+
+        return "/%s/%s/%s".formatted(bits[1], bits[2], bits[3]);
     }
 }
