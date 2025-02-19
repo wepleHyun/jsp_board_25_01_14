@@ -3,6 +3,7 @@ import com.sbs.jsp.board.boundedContext.article.dto.Article;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.IntStream;
 
 public class ArticleRepository {
@@ -33,5 +34,16 @@ public class ArticleRepository {
         Article article = new Article(id, subject, content);
         articleList.add(article);
         return id;
+    }
+
+    public Article findById(int id) {
+        /*for(Article article : articleList) {
+            if(article.getId() == id) {
+                return article;
+            }
+        }*/
+         return articleList.stream().filter(
+                a -> a.getId() == id
+        ).findFirst().orElse(null);
     }
 }

@@ -89,4 +89,23 @@ public class ArticleController {
         long id = articleService.write(subject, content);
         rq.print("<div>%d번 게시물이 생성되었습니다.</div>\n".formatted(id));
     }
+
+    public void showDetail(Rq rq) {
+        int id = rq.getIntParam("id", 0);
+
+        if(id == 0) {
+            rq.print("올바른 요청이 아닙니다.");
+        }
+
+        Article article = articleService.findById(id);
+
+        if(article == null) {
+            rq.print("%d번 게시물은 존재하지 않습니다.".formatted(id));
+            return;
+        }
+
+        rq.setAttr("article", article);
+
+        rq.view("usr/article/detail");
+    }
 }
