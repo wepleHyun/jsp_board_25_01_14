@@ -108,7 +108,7 @@ public class Rq {
 
     public String getPathValueByIndex(int index, String defaultValue) {
         String[] bits = req.getRequestURI().split("/");
-        System.out.println(Arrays.toString(bits));
+        //System.out.println(Arrays.toString(bits));
 
         try {
             return bits[4 + index];
