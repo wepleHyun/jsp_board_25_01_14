@@ -5,13 +5,16 @@
 
 <h1>게시물 리스트</h1>
 
-<div>
-    <c:forEach var="article" items="${articles}">
-        <li>
-            <span>${article.id}번 : </span>
-            <span>${article.subject}</span>
-        </li>
-    </c:forEach>
-
-
-</div>
+<section class="article-list">
+    <a href="write">게시물 작성</a>
+    <nav>
+        <ul>
+            <c:forEach var="article" items="${articles}">
+                <li>
+                    <span>${article.id}번 : </span>
+                    <a href="detail?id=${article.id}"><span>${article.subject}</span></a>
+                </li>
+            </c:forEach>
+        </ul>
+    </nav>
+</section>

@@ -39,7 +39,7 @@
         <br>
         <div>
             <button type="submit">작성</button>
-            <button>취소</button>
+            <a href="list">취소</a>
         </div>
     </form>
 </section>

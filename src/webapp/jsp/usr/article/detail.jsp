@@ -5,8 +5,13 @@
 
 <h1>게시물 상세보기</h1>
 
-<div>
-    <div>ID : ${article.id}</div>
-    <div>subject : ${article.subject}</div>
-    <div>content : ${article.content}</div>
-</div>
+<section class="article-detail">
+    <div>
+        <div>ID : ${article.id}</div>
+        <div>subject : ${article.subject}</div>
+        <div>content : ${article.content}</div>
+    </div>
+    <div>
+        <a href="list">리스트로 이동</a>
+    </div>
+</section>
