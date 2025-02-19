@@ -12,7 +12,7 @@
             <c:forEach var="article" items="${articles}">
                 <li>
                     <span>${article.id}번 : </span>
-                    <a href="detail?id=${article.id}"><span>${article.subject}</span></a>
+                    <a href="detail/free/${article.id}"><span>${article.subject}</span></a>
                 </li>
             </c:forEach>
         </ul>
